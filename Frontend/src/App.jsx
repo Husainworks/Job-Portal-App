@@ -1,10 +1,28 @@
-// 3:21:30 on 30/10/24 at 11:10pm 
-import './App.css'
+// 4:33:13 on 30/10/24 at 11:10pm
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Login from './components/authorization/Login'
+import Signup from './components/authorization/Signup'
+import Home from './components/home'
+
+const appRouter = createBrowserRouter([
+  {
+    path:"/",
+    element:<Home/>
+  },
+  {
+    path:"/login",
+    element:<Login/>
+  },
+  {
+    path:"/signup",
+    element:<Signup/>
+  }
+])
 
 function App() {
   return (
     <>
-      <h1 className='text-red-500'>Let's Build Job Portal</h1>
+      <RouterProvider router = {appRouter}/>
     </>
   )
 }
